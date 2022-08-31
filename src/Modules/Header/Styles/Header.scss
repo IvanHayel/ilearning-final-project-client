@@ -1,0 +1,46 @@
+.header-bar {
+  .brand {
+    font: bold 1.5rem/1.5rem Roboto, sans-serif;
+    margin: 1rem;
+    cursor: pointer;
+    caret-color: transparent;
+
+    &:hover {
+      text-shadow: 0 0 7px mediumvioletred;
+      transform: scale(1.05);
+      transition: 2s;
+    }
+  }
+
+  .main-buttons {
+    flex-grow: 1;
+  }
+
+  .search-box {
+    flex-grow: 1;
+    padding: 10px;
+    margin-right: 1rem;
+
+    * {
+      border-color: inherit !important;
+
+      .MuiInputBase-root {
+        color: inherit;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .sign-group {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 20px;
+    margin: 0 1rem;
+  }
+
+  .config-group {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+}

@@ -1,0 +1,67 @@
+.preview {
+  height: 100%;
+  width: 100%;
+  min-height: 400px;
+  max-width: 260px;
+
+  .preview-image {
+    height: 160px;
+  }
+
+  .preview-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+  }
+
+  .preview-info {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .preview-loading-spinner {
+    display: flex;
+    margin: 30px auto;
+  }
+
+  .preview-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    max-height: 50px;
+    margin: 4px 0;
+  }
+
+  .solo-button {
+    justify-content: flex-end;
+  }
+
+  .preview-tags {
+    width: 100%;
+    height: 100%;
+    max-height: 38px;
+    user-select: none;
+    margin: 0.5rem 0;
+
+    .tag {
+      margin: 3px;
+    }
+
+    .simplebar-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    * {
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+}

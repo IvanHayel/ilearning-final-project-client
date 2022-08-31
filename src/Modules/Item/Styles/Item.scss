@@ -1,0 +1,98 @@
+.item-container {
+  width: 100%;
+  min-height: 80vh;
+
+  .title-box {
+    .item-title {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      padding: 3vh 0;
+      text-align: center;
+      font-weight: bold;
+      user-select: none;
+    }
+  }
+
+  .item-image {
+    max-width: 262px;
+    max-height: 162px;
+  }
+
+  .action-box {
+    .preview-tags {
+      width: 100%;
+      max-height: 78px;
+      margin: 0.5rem 0;
+
+      .simplebar-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+
+      .tag {
+        margin: 3px;
+      }
+    }
+
+    .action-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin: 1rem 0;
+    }
+  }
+
+  .info-box {
+    .accordion-title {
+      font-weight: 800;
+      font-size: larger;
+      width: 50%;
+      flex-shrink: 0;
+    }
+
+    .accordion-plain {
+      font-size: large;
+      font-weight: 600;
+
+      strong {
+        font-weight: 800;
+        font-size: large;
+        color: mediumpurple;
+      }
+    }
+
+    .break-line {
+      white-space: pre-line;
+      margin-left: 1rem;
+    }
+  }
+
+  .comment-box {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 1vh auto;
+    border-radius: 15px;
+    padding: 5px;
+    max-height: 34vh;
+    box-shadow: 0 0 5px rgb(255 255 255 / 30%);
+
+    .message-list {
+      display: flex;
+      overflow: auto;
+      color: rgb(0 0 0 / 70%);
+      cursor: default;
+    }
+
+    .comment-input {
+      margin: 5px;
+    }
+  }
+}
+
+.loading-holder {
+  min-height: 80vh;
+}

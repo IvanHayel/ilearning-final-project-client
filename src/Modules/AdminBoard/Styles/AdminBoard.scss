@@ -1,0 +1,28 @@
+.board {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1vh;
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    margin-bottom: 1vh;
+  }
+
+  .board-title {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    font-weight: 600;
+    user-select: none;
+    text-shadow: mediumpurple 0 0 3px;
+  }
+
+  .board-grid {
+    padding: 5px;
+  }
+}

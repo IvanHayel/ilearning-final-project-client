@@ -1,0 +1,218 @@
+{
+  "type": {
+    "string": "STRING",
+    "text": "TEXT",
+    "date": "DATE",
+    "number": "NUMBER",
+    "boolean": "BOOLEAN"
+  },
+  "brand": "Course Project",
+  "home": {
+    "title": "Welcome",
+    "description": "COURSE PROJECT",
+    "top": "TOP 3 COLLECTIONS",
+    "tagCloud": "TAG CLOUD"
+  },
+  "side": {
+    "back": "Back",
+    "about": "About",
+    "collections": "Collections",
+    "ownCollections": "Own collections"
+  },
+  "adminBoard": {
+    "title": "ADMIN BOARD",
+    "unblock": "Unblock:",
+    "block": "Block:",
+    "delete": "Delete:",
+    "grantAdminRights": "Grant admin rights:",
+    "revokeAdminRights": "Revoke admin rights:"
+  },
+  "ownCollections": {
+    "title": "OWN COLLECTIONS"
+  },
+  "collectionItems": {
+    "title": "COLLECTION ",
+    "moreButton": "MORE LIKE THIS..."
+  },
+  "collections": {
+    "title": "COLLECTIONS"
+  },
+  "collectionPreview": {
+    "owner": "Owner: ",
+    "theme": "Theme: ",
+    "created": "Created: ",
+    "modified": "Modified: ",
+    "collection": "collection"
+  },
+  "itemPreview": {
+    "created": "Created: ",
+    "modified": "Modified: ",
+    "item": "item"
+  },
+  "item": {
+    "general": {
+      "title": "General information",
+      "collection": "Collection: ",
+      "theme": "Theme: ",
+      "owner": "Owner: ",
+      "item": "Item: ",
+      "created": "Created: ",
+      "updated": "Updated: "
+    },
+    "additional": {
+      "title": "Additional information"
+    },
+    "commentPlaceholder": "Leave your comment here...",
+    "commentPlaceholderUnauthorized": "Authorize to leave comment..."
+  },
+  "dialog": {
+    "unblock": {
+      "title": "Are you sure you want to unblock this user(s)?",
+      "firstMessage": "This action will unblock the user(s).",
+      "secondMessage": "Obviously, you can block them again :)"
+    },
+    "block": {
+      "title": "Are you sure you want to block this user(s)?",
+      "firstMessage": "This action will block the user(s).",
+      "secondMessage": "This action can be undone."
+    },
+    "delete": {
+      "title": "Are you sure you want to delete this",
+      "firstMessage": "This action will permanently delete",
+      "secondMessage": "This action can't be undone."
+    },
+    "grant": {
+      "title": "Are you sure you want to grant admin rights to this user(s)?",
+      "firstMessage": "This action will grant admin rights to the user(s).",
+      "secondMessage": "This action can be undone."
+    },
+    "revoke": {
+      "title": "Are you sure you want to revoke admin rights to this user(s)?",
+      "firstMessage": "This action will revoke admin rights to the user(s).",
+      "secondMessage": "This action can be undone."
+    },
+    "confirm": "CONFIRM",
+    "cancel": "CANCEL"
+  },
+  "user": {
+    "userOrUsers": "user(s)",
+    "username": "Username",
+    "email": "Email",
+    "roles": "Roles",
+    "created": "Created",
+    "updated": "Updated",
+    "lastLogin": "Last login",
+    "online": "Online",
+    "block": "Block"
+  },
+  "form": {
+    "signIn": "SIGN IN",
+    "signUp": "SIGN UP",
+    "collection": "COLLECTION",
+    "item": "ITEM",
+    "tags": "Tags",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "contentType": "Content type",
+    "name": "Name",
+    "theme": "Theme",
+    "create": "CREATE",
+    "edit": "EDIT",
+    "add": "ADD",
+    "randomImage": "RANDOM IMAGE",
+    "yourImage": "YOUR IMAGE",
+    "addField": "ADD FIELD",
+    "editField": "EDIT FIELD",
+    "tagHolder": "Tag here"
+  },
+  "toast": {
+    "user": "User",
+    "pending": "Wait a couple of seconds...",
+    "signOutSuccess": "See you soon!",
+    "signUpSuccess": "Registration complete!",
+    "signInSuccess": "Glad to see you again!",
+    "tokenRefreshSuccess": "Token refreshed!",
+    "sessionExpired": "Session expired, please sign in again!",
+    "deleteUserSuccess": "User deleted! ID: ",
+    "blockUserSuccess": "User blocked! ID: ",
+    "unblockUserSuccess": "User unblocked! ID: ",
+    "grantAdminRightsSuccess": "Admin rights granted! ID: ",
+    "revokeAdminRightsSuccess": "Admin rights revoked! ID: ",
+    "ejectUserSuccess": "You have been logged out by system! Try signing in again.",
+    "createCollectionSuccess": "Collection created!",
+    "deleteCollectionSuccess": "Collection deleted! Name: ",
+    "editCollectionSuccess": "Collection edited! Name: ",
+    "addItemSuccess": "Item added!",
+    "updateItemSuccess": "Item updated!",
+    "deleteItemSuccess": "Item deleted! Name: ",
+    "leaveComment": "leave comment under your item"
+  },
+  "validation": {
+    "username": {
+      "enter": "Enter your username",
+      "size": "Username must be at least 3 characters!",
+      "required": "Username is required!"
+    },
+    "email": {
+      "enter": "Enter your email!",
+      "valid": "Enter a valid email!",
+      "required": "Email is required!"
+    },
+    "password": {
+      "enter": "Enter your password!",
+      "size": "Password must be at least 6 characters!",
+      "required": "Password is required!"
+    },
+    "confirmPassword": {
+      "enter": "Confirm your password!",
+      "match": "Passwords must match!",
+      "required": "Password confirmation required!"
+    },
+    "collectionName": {
+      "enter": "Enter a name for your collection!",
+      "size": "Name must be at least 3 characters!",
+      "required": "Name is required!"
+    },
+    "collectionTheme": {
+      "enter": "Enter a theme for your collection!",
+      "size": "Theme must be at least 3 characters!",
+      "required": "Theme is required!"
+    },
+    "fieldName": {
+      "enter": "Enter a name for your field!",
+      "size": "Name must be at least 3 characters!",
+      "required": "Name is required!",
+      "unique": "Name must be unique!",
+      "format": "Invalid name format! Start with a letter and use only latin alphabet!"
+    },
+    "image": {
+      "required": "Image is required!"
+    }
+  },
+  "search": {
+    "placeholder": "Search...",
+    "themes": "Themes",
+    "tags": "Tags",
+    "results": "SEARCH RESULTS",
+    "whereLook": "Where will we look?",
+    "scope": {
+      "global": "Global",
+      "collections": "Collections",
+      "items": "Items",
+      "themes": "Themes",
+      "tags": "Tags"
+    },
+    "found": {
+      "collections": "Found collections:",
+      "items": "Found items:",
+      "nothing": "Sorry, we couldn't find anything..."
+    }
+  },
+  "error404": {
+    "title": "We are sorry,",
+    "description": "the page you were looking for can't be found",
+    "backToHome": "Back to home"
+  }
+}

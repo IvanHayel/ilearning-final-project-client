@@ -1,0 +1,45 @@
+.side-bar-icon-button {
+  margin-right: 1rem;
+}
+
+.side-menu {
+  width: 250px;
+  height: 100%;
+
+  .collections {
+    &:hover {
+      background-color: rgb(46 125 50 / 20%);
+    }
+  }
+
+  .own-collections {
+    &:hover {
+      background-color: rgb(173 20 87 / 20%);
+    }
+  }
+
+  .menu-item {
+    padding: 0;
+
+    .head-menu-option {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .side-menu-option {
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+}
+
+.side-menu-footer {
+  .menu-item {
+    padding: 0;
+
+    .side-menu-option {
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+}

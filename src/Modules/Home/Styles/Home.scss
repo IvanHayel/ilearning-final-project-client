@@ -1,0 +1,43 @@
+.home {
+  user-select: none;
+  margin-top: 3vh;
+  caret-color: transparent;
+  min-height: 80vh;
+
+  .home-greeting {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 3vh;
+    font-weight: bold;
+    text-shadow: mediumpurple 0 0 2px;
+    text-align: center;
+  }
+
+  .home-description {
+    display: flex;
+    width: 100%;
+    margin: 3vh 0;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .top-collections {
+  }
+
+  .tags-cloud {
+    align-self: flex-end;
+    background-color: mediumvioletred;
+    margin: 2vh 0;
+    padding: 1vh;
+    border-radius: 5%;
+    width: 430px;
+    height: 430px;
+  }
+
+  .cloud {
+    margin-top: 0;
+    padding-left: 16px;
+  }
+}

@@ -1,0 +1,29 @@
+.about-container {
+  min-height: 80vh;
+
+  .about-title {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 5vh 0;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .about-text {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: justify;
+    letter-spacing: 0.2rem;
+    padding: 5vh 0;
+
+    strong {
+      font-weight: bold;
+      font-size: larger;
+      margin-bottom: 2vh;
+    }
+  }
+}

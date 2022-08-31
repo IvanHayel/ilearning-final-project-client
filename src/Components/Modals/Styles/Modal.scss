@@ -1,0 +1,75 @@
+.modal-main-box {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  max-height: 85vh;
+  max-width: 450px;
+  min-width: 450px;
+  overflow: auto;
+  border: 1px solid rgb(173 20 87 / 20%);
+  box-shadow: 0 0 15px 1px rgb(173 20 87 / 20%);
+
+  .modal-form {
+    margin-top: 10px;
+
+    .modal-input-field {
+      width: 100%;
+      margin-top: 30px;
+      box-shadow: none;
+      font-weight: bold;
+      max-width: 408px;
+    }
+
+    .modal-error-message {
+      font-weight: bold;
+    }
+
+    .modal-loading-spinner {
+      display: flex;
+      margin: 30px auto;
+    }
+
+    .modal-confirm-button {
+      display: flex;
+      position: sticky;
+      width: 45%;
+      margin: 30px auto;
+    }
+
+    .chip-value {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .modal-action-button {
+      font-weight: 600;
+    }
+
+    .image-preview {
+      display: flex;
+      user-select: none;
+      margin: 30px auto;
+      width: 70%;
+      max-height: 20vh;
+    }
+
+    .modal-action-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+  }
+
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+}
