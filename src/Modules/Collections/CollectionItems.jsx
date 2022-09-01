@@ -21,11 +21,10 @@ import {
   useParams
 }                                     from "react-router-dom";
 import {
-  ItemModal
+  ItemModal,
+  ItemPreview,
+  SortConfigurationDialog
 }                                     from "../../Components";
-import {
-  ItemPreview
-}                                     from "../../Components/Cards/ItemPreview";
 import {
   ACTIONS,
   CONTENT,
@@ -33,7 +32,9 @@ import {
   ITEMS_PER_PAGE_OWNER,
   ROUTE_PARAMETER,
   ROUTE_URL,
-  SEARCH_SCOPE
+  SEARCH_SCOPE,
+  SORT_DIRECTION,
+  SORT_STRATEGY
 }                                     from "../../Constants";
 import {
   useStore
@@ -53,6 +54,8 @@ export const CollectionItems = observer(() => {
   const navigate = useNavigate();
   const params = useParams();
   const [page, setPage] = useState(1);
+  const [sortDirection, setSortDirection] = useState(SORT_DIRECTION.DEFAULT);
+  const [sortStrategy, setSortStrategy] = useState(SORT_STRATEGY.DEFAULT);
   const collectionStore = useStore("collectionStore");
   const collection = collectionStore.getCollection();
   const items = collectionStore.getItems();
@@ -62,6 +65,12 @@ export const CollectionItems = observer(() => {
   }, [collection]);
   const start = (page - 1) * perPage;
   const end = page * perPage;
+  const handleSortConfigurationClose = (isChanged, direction, strategy) => {
+    if (isChanged) {
+      setSortDirection(direction);
+      setSortStrategy(strategy);
+    }
+  };
   const handleShowMore = () => {
     const searchParams = createSearchParams({
       [ROUTE_PARAMETER.SEARCH.TERM]: collection.theme.name,
@@ -87,10 +96,10 @@ export const CollectionItems = observer(() => {
   useEffect(() => {
     const fetchData = async () => {
       await getCollection(params.name);
-      await getCollectionItems(params.name);
+      await getCollectionItems(params.name, sortDirection, sortStrategy);
     };
     fetchData().catch(() => navigate(ROUTE_URL.WHOOPS.NOT_FOUND));
-  }, [navigate, params.name]);
+  }, [navigate, params.name, sortDirection, sortStrategy]);
   return (
       <Container className="collections-container">
         <Typography color="primary" variant="h4" className="collections-title">
@@ -99,8 +108,15 @@ export const CollectionItems = observer(() => {
             {collection.name}
           </strong>
         </Typography>
-        <Box className="collections-show-more">
-          <Button variant="outlined" color="warning" onClick={handleShowMore}>
+        <Box className="collections-additional-actions">
+          <SortConfigurationDialog
+              currentDirection={sortDirection}
+              currentStrategy={sortStrategy}
+              onDialogClose={handleSortConfigurationClose}
+          />
+          <Button variant="outlined" color="warning" onClick={handleShowMore}
+                  sx={{backgroundColor: "background.paper", fontWeight: "bold"}}
+          >
             {t(CONTENT.COLLECTION_ITEMS.MORE_BUTTON)}
           </Button>
         </Box>

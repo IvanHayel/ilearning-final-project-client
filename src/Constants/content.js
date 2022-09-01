@@ -113,6 +113,22 @@ export const CONTENT = {
       FIRST_MESSAGE: "dialog.revoke.firstMessage",
       SECOND_MESSAGE: "dialog.revoke.secondMessage",
     },
+    SORT: {
+      TITLE: "dialog.sort.title",
+      DIRECTION: {
+        LABEL: "dialog.sort.direction.label",
+        DEFAULT: "dialog.sort.direction.default",
+        ASC: "dialog.sort.direction.asc",
+        DESC: "dialog.sort.direction.desc",
+      },
+      STRATEGY: {
+        LABEL: "dialog.sort.strategy.label",
+        DEFAULT: "dialog.sort.strategy.default",
+        CREATE_DATE: "dialog.sort.strategy.createDate",
+        UPDATE_DATE: "dialog.sort.strategy.updateDate",
+        NAME: "dialog.sort.strategy.name",
+      },
+    },
     CONFIRM: "dialog.confirm",
     CANCEL: "dialog.cancel",
   },

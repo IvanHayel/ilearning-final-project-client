@@ -27,6 +27,7 @@ const {authenticationStore, commentStore} = stores;
 const subscriptions = new Map();
 
 let stompClient = null;
+const stompDebugEnabled = process.env.REACT_APP_API_SOCKET_DEBUG_ENABLED;
 
 let socketConnectedStatus = false;
 
@@ -39,7 +40,7 @@ export const connectToSocket = () => {
     verifyTokenNotExpired();
     const socket = new SockJS(SOCKET.CONNECT);
     stompClient = over(socket);
-    // stompClient.debug = null; production only
+    stompClient.debug = stompDebugEnabled ? stompClient.debug : null;
     stompClient.connect({
       [TOKEN_HEADER_NAME]: getLocalAccessToken()
     }, onSocketConnected, onSocketConnectionError);
