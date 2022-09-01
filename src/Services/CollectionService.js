@@ -1,29 +1,31 @@
-import {t}    from "i18next";
-import {
-  toast
-}             from "react-toastify";
-import {
-  api
-}             from "../Config";
+import {t}                  from "i18next";
+import {toast}              from "react-toastify";
+import {api}                from "../Config";
 import {
   BASIC_TOAST_OPTIONS,
   COLLECTIONS_API,
   CONTENT,
-  CONTENT_TYPE
-}             from "../Constants";
-import stores from "../Stores";
-import {
-  createErrorMessage
-}             from "../Utils";
-import {
-  getImageObjectUrl
-}             from "./ImageService";
+  CONTENT_TYPE,
+  SORT_DIRECTION,
+  SORT_STRATEGY
+}                           from "../Constants";
+import stores               from "../Stores";
+import {createErrorMessage} from "../Utils";
+import {getImageObjectUrl}  from "./ImageService";
 
 const {collectionStore, commentStore} = stores;
 
-export const getCollections = async () => {
+const buildSortUrl = (baseUrl, direction, strategy) => {
+  const parameters = new URLSearchParams();
+  parameters.append(SORT_DIRECTION.PARAMETER, direction);
+  parameters.append(SORT_STRATEGY.PARAMETER, strategy);
+  return `${baseUrl}?${parameters}`;
+};
+
+export const getCollections = async (direction, strategy) => {
   try {
-    const response = await api.get(COLLECTIONS_API.COLLECTIONS);
+    const url = buildSortUrl(COLLECTIONS_API.COLLECTIONS, direction, strategy);
+    const response = await api.get(url);
     collectionStore.setCollections(response.data);
     return response;
   } catch (error) {
@@ -31,9 +33,11 @@ export const getCollections = async () => {
   }
 };
 
-export const getOwnCollections = async () => {
+export const getOwnCollections = async (direction, strategy) => {
   try {
-    const response = await api.get(COLLECTIONS_API.COLLECTIONS_OWN);
+    const url =
+        buildSortUrl(COLLECTIONS_API.COLLECTIONS_OWN, direction, strategy);
+    const response = await api.get(url);
     collectionStore.setOwnCollections(response.data);
     return response;
   } catch (error) {
@@ -52,9 +56,10 @@ export const getTopCollections = async (count) => {
   }
 };
 
-export const getCollectionItems = async (name) => {
+export const getCollectionItems = async (name, direction, strategy) => {
   try {
-    const url = `${COLLECTIONS_API.COLLECTIONS}/${name}/items`;
+    const baseUrl = `${COLLECTIONS_API.COLLECTIONS}/${name}/items`;
+    const url = buildSortUrl(baseUrl, direction, strategy);
     const response = await api.get(url);
     collectionStore.setItems(response.data)
     return response;

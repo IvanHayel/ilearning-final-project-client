@@ -91,6 +91,22 @@
       "firstMessage": "This action will revoke admin rights to the user(s).",
       "secondMessage": "This action can be undone."
     },
+    "sort": {
+      "title": "SORT CONFIGURATION",
+      "direction": {
+        "label": "Direction",
+        "default": "Default",
+        "asc": "Ascending",
+        "desc": "Descending"
+      },
+      "strategy": {
+        "label": "Strategy",
+        "default": "Default",
+        "createDate": "By create date",
+        "updateDate": "By update date",
+        "name": "By name"
+      }
+    },
     "confirm": "CONFIRM",
     "cancel": "CANCEL"
   },

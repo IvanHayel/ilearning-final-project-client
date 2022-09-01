@@ -47,3 +47,18 @@ export const SEARCH_SCOPE = {
   ITEMS: "items",
   ITEMS_BY_TAG: "tag",
 };
+
+export const SORT_DIRECTION = {
+  PARAMETER: "direction",
+  DEFAULT: "DEFAULT",
+  ASC: "ASC",
+  DESC: "DESC",
+};
+
+export const SORT_STRATEGY = {
+  PARAMETER: "strategy",
+  DEFAULT: "DEFAULT",
+  CREATE_DATE: "CREATE_DATE",
+  UPDATE_DATE: "UPDATE_DATE",
+  NAME: "NAME",
+};
