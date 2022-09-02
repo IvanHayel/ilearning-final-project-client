@@ -1,43 +1,48 @@
 import AddCircleOutlineOutlinedIcon
-  from "@mui/icons-material/AddCircleOutlineOutlined";
+                        from "@mui/icons-material/AddCircleOutlineOutlined";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import {
   Box,
   Container,
   Grid,
+  IconButton,
   Pagination,
   Typography
-} from "@mui/material";
+}                       from "@mui/material";
 import {
   observer
-} from "mobx-react-lite";
+}                       from "mobx-react-lite";
 import {
   useEffect,
   useState
-} from "react";
+}                       from "react";
+import {
+  CSVLink
+}                       from "react-csv";
 import {
   useTranslation
-} from "react-i18next";
+}                       from "react-i18next";
 import {
   CollectionModal,
   CollectionPreview,
   SortConfigurationDialog
-} from "../../Components";
+}                       from "../../Components";
 import {
   ACTIONS,
   CONTENT,
   OWN_COLLECTIONS_PER_PAGE,
   SORT_DIRECTION,
   SORT_STRATEGY
-} from "../../Constants";
+}                       from "../../Constants";
 import {
   useStore
-} from "../../Hooks";
+}                       from "../../Hooks";
 import {
   getOwnCollections
-} from "../../Services";
+}                       from "../../Services";
 import {
   scrollToTop
-} from "../../Utils";
+}                       from "../../Utils";
 import "./Styles/Collections.scss";
 
 export const OwnCollections = observer(() => {
@@ -47,6 +52,7 @@ export const OwnCollections = observer(() => {
   const [sortStrategy, setSortStrategy] = useState(SORT_STRATEGY.DEFAULT);
   const collectionStore = useStore("collectionStore");
   const ownCollections = collectionStore.getOwnCollections();
+  const csv = collectionStore.getOwnCollectionsCsv();
   const start = (page - 1) * OWN_COLLECTIONS_PER_PAGE;
   const end = page * OWN_COLLECTIONS_PER_PAGE;
   const handleSortConfigurationClose = (isChanged, direction, strategy) => {
@@ -71,6 +77,14 @@ export const OwnCollections = observer(() => {
           <strong>{t(CONTENT.OWN_COLLECTIONS.TITLE)}</strong>
         </Typography>
         <Box className="collections-additional-actions">
+          <CSVLink data={csv} filename="own-collections.csv"
+                   target="_blank" className="csv-export-button"
+          >
+            <IconButton sx={{backgroundColor: "background.paper"}}
+                        color="secondary" size="medium">
+              <FileDownloadIcon fontSize="large" />
+            </IconButton>
+          </CSVLink>
           <SortConfigurationDialog
               currentDirection={sortDirection}
               currentStrategy={sortStrategy}

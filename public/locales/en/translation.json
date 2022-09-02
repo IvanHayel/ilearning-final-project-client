@@ -207,6 +207,20 @@
       "required": "Image is required!"
     }
   },
+  "csv": {
+    "id": "ID",
+    "theme": "Theme",
+    "collection": "Collection",
+    "owner": "Owner",
+    "image": "Image link",
+    "items": "Total items",
+    "created": "Create date",
+    "updated": "Update date",
+    "item": "Item",
+    "tags": "Tags",
+    "likes": "Total likes",
+    "comments": "Total comments"
+  },
   "search": {
     "placeholder": "Search...",
     "themes": "Themes",

@@ -1,33 +1,44 @@
-import {Box, Container, Grid, Pagination, Typography} from "@mui/material";
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import {
+  Box,
+  Container,
+  Grid,
+  IconButton,
+  Pagination,
+  Typography
+}                       from "@mui/material";
 import {
   observer
-}                                                     from "mobx-react-lite";
+}                       from "mobx-react-lite";
 import {
   useEffect,
   useState
-}                                                     from "react";
+}                       from "react";
+import {
+  CSVLink
+}                       from "react-csv";
 import {
   useTranslation
-}                                                     from "react-i18next";
+}                       from "react-i18next";
 import {
   CollectionPreview,
   SortConfigurationDialog
-}                                                     from "../../Components";
+}                       from "../../Components";
 import {
   COLLECTIONS_PER_PAGE,
   CONTENT,
   SORT_DIRECTION,
   SORT_STRATEGY
-}                                                     from "../../Constants";
+}                       from "../../Constants";
 import {
   useStore
-}                                                     from "../../Hooks";
+}                       from "../../Hooks";
 import {
   getCollections
-}                                                     from "../../Services";
+}                       from "../../Services";
 import {
   scrollToTop
-}                                                     from "../../Utils";
+}                       from "../../Utils";
 import "./Styles/Collections.scss";
 
 export const GlobalCollections = observer(() => {
@@ -37,6 +48,7 @@ export const GlobalCollections = observer(() => {
   const [page, setPage] = useState(1);
   const collectionStore = useStore("collectionStore");
   const collections = collectionStore.getCollections();
+  const csv = collectionStore.getCollectionsCsv();
   const start = (page - 1) * COLLECTIONS_PER_PAGE;
   const end = page * COLLECTIONS_PER_PAGE;
   const handleSortConfigurationClose = (isChanged, direction, strategy) => {
@@ -61,6 +73,14 @@ export const GlobalCollections = observer(() => {
           <strong>{t(CONTENT.COLLECTIONS.TITLE)}</strong>
         </Typography>
         <Box className="collections-additional-actions">
+          <CSVLink data={csv} filename="global-collections.csv"
+                   target="_blank" className="csv-export-button"
+          >
+            <IconButton sx={{backgroundColor: "background.paper"}}
+                        color="secondary" size="medium">
+              <FileDownloadIcon fontSize="large" />
+            </IconButton>
+          </CSVLink>
           <SortConfigurationDialog
               currentDirection={sortDirection}
               currentStrategy={sortStrategy}

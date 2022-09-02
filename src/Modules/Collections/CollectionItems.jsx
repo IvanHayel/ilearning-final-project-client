@@ -1,30 +1,39 @@
 import AddCircleOutlineOutlinedIcon
-                                      from "@mui/icons-material/AddCircleOutlineOutlined";
+                        from "@mui/icons-material/AddCircleOutlineOutlined";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import {
   Box,
   Button,
   Container,
   Grid,
+  IconButton,
   Pagination,
   Typography
-}                                     from "@mui/material";
+}                       from "@mui/material";
 import {
   observer
-}                                     from "mobx-react-lite";
-import {useEffect, useMemo, useState} from "react";
+}                       from "mobx-react-lite";
+import {
+  useEffect,
+  useMemo,
+  useState
+}                       from "react";
+import {
+  CSVLink
+}                       from "react-csv";
 import {
   useTranslation
-}                                     from "react-i18next";
+}                       from "react-i18next";
 import {
   createSearchParams,
   useNavigate,
   useParams
-}                                     from "react-router-dom";
+}                       from "react-router-dom";
 import {
   ItemModal,
   ItemPreview,
   SortConfigurationDialog
-}                                     from "../../Components";
+}                       from "../../Components";
 import {
   ACTIONS,
   CONTENT,
@@ -35,18 +44,18 @@ import {
   SEARCH_SCOPE,
   SORT_DIRECTION,
   SORT_STRATEGY
-}                                     from "../../Constants";
+}                       from "../../Constants";
 import {
   useStore
-}                                     from "../../Hooks";
+}                       from "../../Hooks";
 import {
   getCollection,
   getCollectionItems,
   isEnoughRights
-}                                     from "../../Services";
+}                       from "../../Services";
 import {
   scrollToTop
-}                                     from "../../Utils";
+}                       from "../../Utils";
 import "./Styles/Collections.scss";
 
 export const CollectionItems = observer(() => {
@@ -59,6 +68,7 @@ export const CollectionItems = observer(() => {
   const collectionStore = useStore("collectionStore");
   const collection = collectionStore.getCollection();
   const items = collectionStore.getItems();
+  const csv = collectionStore.getItemsCsv();
   const perPage = useMemo(() => {
     return isEnoughRights(collection.owner.id, collection.owner.username)
         ? ITEMS_PER_PAGE_OWNER : ITEMS_PER_PAGE;
@@ -109,6 +119,14 @@ export const CollectionItems = observer(() => {
           </strong>
         </Typography>
         <Box className="collections-additional-actions">
+          <CSVLink data={csv} filename={`${collection.name}-items.csv`}
+                   target="_blank" className="csv-export-button"
+          >
+            <IconButton sx={{backgroundColor: "background.paper"}}
+                        color="secondary" size="medium">
+              <FileDownloadIcon fontSize="large" />
+            </IconButton>
+          </CSVLink>
           <SortConfigurationDialog
               currentDirection={sortDirection}
               currentStrategy={sortStrategy}
