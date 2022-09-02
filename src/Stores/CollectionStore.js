@@ -93,8 +93,16 @@ export default class CollectionStore {
     return [...this.collections];
   }
 
+  getCollectionsCsv() {
+    return this.mapCollectionsToCsv([...this.collections]);
+  }
+
   getOwnCollections() {
     return [...this.ownCollections];
+  }
+
+  getOwnCollectionsCsv() {
+    return this.mapCollectionsToCsv([...this.ownCollections]);
   }
 
   getTopCollections() {
@@ -107,6 +115,27 @@ export default class CollectionStore {
 
   getItems() {
     return [...this.items];
+  }
+
+  getItemsCsv() {
+    return [...this.items].map(item => {
+      const mappedItem = {
+        [t(CONTENT.CSV.ID)]: item.id,
+        [t(CONTENT.CSV.COLLECTION)]: item.collection.name,
+        [t(CONTENT.CSV.ITEM)]: item.name,
+        [t(CONTENT.CSV.OWNER)]: item.collection.owner.username,
+        [t(CONTENT.CSV.IMAGE)]: item.imageLink,
+        [t(CONTENT.CSV.TAGS)]: item.tags.map(tag => tag.name),
+        [t(CONTENT.CSV.COMMENTS)]: item.comments.length,
+        [t(CONTENT.CSV.LIKES)]: item.likes.length,
+        [t(CONTENT.CSV.CREATED)]: new Date(item.createDate).toLocaleString(),
+        [t(CONTENT.CSV.UPDATED)]: new Date(item.updateDate).toLocaleString(),
+      };
+      item.fields.forEach(field => {
+        mappedItem[field.name] = field.value;
+      });
+      return mappedItem;
+    });
   }
 
   getItem() {
@@ -145,6 +174,23 @@ export default class CollectionStore {
     const tagGroup = [...this.tags];
     tagGroup.forEach(tag => tag.group = t(CONTENT.SEARCH.TAGS));
     return [...themeGroup, ...tagGroup];
+  }
+
+  mapCollectionsToCsv(collections) {
+    return collections.map(collection => {
+      return {
+        [t(CONTENT.CSV.ID)]: collection.id,
+        [t(CONTENT.CSV.THEME)]: collection.theme.name,
+        [t(CONTENT.CSV.COLLECTION)]: collection.name,
+        [t(CONTENT.CSV.OWNER)]: collection.owner.username,
+        [t(CONTENT.CSV.IMAGE)]: collection.imageLink,
+        [t(CONTENT.CSV.ITEMS)]: collection.items.length,
+        [t(CONTENT.CSV.CREATED)]: new Date(
+            collection.createDate).toLocaleString(),
+        [t(CONTENT.CSV.UPDATED)]: new Date(
+            collection.updateDate).toLocaleString(),
+      };
+    })
   }
 
   clearStore() {

@@ -230,6 +230,20 @@ export const CONTENT = {
       REQUIRED: "validation.image.required",
     }
   },
+  CSV: {
+    ID: "csv.id",
+    THEME: "csv.theme",
+    COLLECTION: "csv.collection",
+    OWNER: "csv.owner",
+    IMAGE: "csv.image",
+    ITEMS: "csv.items",
+    CREATED: "csv.created",
+    UPDATED: "csv.updated",
+    ITEM: "csv.item",
+    TAGS: "csv.tags",
+    LIKES: "csv.likes",
+    COMMENTS: "csv.comments",
+  },
   SEARCH: {
     LABEL: "search.placeholder",
     THEMES: "search.themes",
