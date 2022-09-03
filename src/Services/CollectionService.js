@@ -123,6 +123,16 @@ export const getCollection = async (name) => {
   }
 };
 
+export const getStatistics = async () => {
+  try {
+    const response = await api.get(COLLECTIONS_API.STATISTICS);
+    collectionStore.setStatistics(response.data);
+    return response;
+  } catch (error) {
+    throw error.response;
+  }
+};
+
 export const createCollection = async (collection) => {
   try {
     return await toast.promise(

@@ -30,6 +30,7 @@ export const COLLECTIONS_API = {
   TAGS: "/collections/tags",
   TAGS_FOR_CLOUD: "/collections/tags-for-cloud",
   THEMES: "/collections/themes",
+  STATISTICS: "/collections/statistics",
 };
 
 export const SEARCH_API = {

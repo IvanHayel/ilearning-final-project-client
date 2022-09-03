@@ -12,6 +12,11 @@ export default class CollectionStore {
   tags = [];
   tagsForCloud = [];
   themes = [];
+  statistics = {
+    collectionsCount: null,
+    likesCount: null,
+    commentsCount: null,
+  };
   collection = {
     id: null,
     createDate: null,
@@ -75,6 +80,10 @@ export default class CollectionStore {
 
   setTagsForCloud(tags) {
     this.tagsForCloud = tags;
+  }
+
+  setStatistics(statistics) {
+    this.statistics = {...statistics};
   }
 
   setThemes(themes) {
@@ -156,6 +165,10 @@ export default class CollectionStore {
     });
   }
 
+  getStatistics() {
+    return {...this.statistics};
+  }
+
   getThemes() {
     return [...this.themes].map(theme => theme.name);
   }
@@ -198,6 +211,11 @@ export default class CollectionStore {
     this.ownCollections = [];
     this.items = [];
     this.clearSearch();
+    this.statistics = {
+      collectionsCount: null,
+      likesCount: null,
+      commentsCount: null,
+    };
     this.collection = {
       id: null,
       createDate: null,

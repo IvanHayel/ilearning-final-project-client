@@ -65,6 +65,21 @@
     "commentPlaceholder": "Leave your comment here...",
     "commentPlaceholderUnauthorized": "Authorize to leave comment..."
   },
+  "profile": {
+    "title": "PROFILE",
+    "personal": {
+      "title": "Personal information",
+      "username": "Username:",
+      "email": "Email:",
+      "roles": "Roles:"
+    },
+    "statistics": {
+      "title": "Statistics",
+      "collections": "Collections created:",
+      "likes": "Total likes:",
+      "comments": "Total comments:"
+    }
+  },
   "dialog": {
     "unblock": {
       "title": "Are you sure you want to unblock this user(s)?",
