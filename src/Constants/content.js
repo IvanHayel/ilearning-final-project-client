@@ -87,6 +87,21 @@ export const CONTENT = {
     COMMENT_PLACEHOLDER: "item.commentPlaceholder",
     COMMENT_PLACEHOLDER_UNAUTHORIZED: "item.commentPlaceholderUnauthorized",
   },
+  PROFILE: {
+    TITLE: "profile.title",
+    PERSONAL: {
+      TITLE: "profile.personal.title",
+      USERNAME: "profile.personal.username",
+      EMAIL: "profile.personal.email",
+      ROLES: "profile.personal.roles",
+    },
+    STATISTICS: {
+      TITLE: "profile.statistics.title",
+      COLLECTIONS: "profile.statistics.collections",
+      LIKES: "profile.statistics.likes",
+      COMMENTS: "profile.statistics.comments",
+    },
+  },
   DIALOG: {
     UNBLOCK: {
       TITLE: "dialog.unblock.title",
