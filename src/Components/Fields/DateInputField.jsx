@@ -29,11 +29,11 @@ export const DateInputField = observer((props) => {
             label={label}
             onChange={onChange}
             validationError={false}
+            className={className}
             value={value}
             renderInput={(params) => (
                 <TextField
                     type="datetime-local"
-                    className={className}
                     autoFocus
                     onFocus={(event) => saveField(event)}
                     {...params}
