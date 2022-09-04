@@ -24,11 +24,9 @@ import {
   useSearchParams
 }                                         from "react-router-dom";
 import {
-  CollectionPreview
-}                                         from "../../Components/Cards/CollectionPreview";
-import {
+  CollectionPreview,
   ItemPreview
-}                                         from "../../Components/Cards/ItemPreview";
+}                                         from "../../Components";
 import {
   CONTENT,
   ROUTE_PARAMETER,

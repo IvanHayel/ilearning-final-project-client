@@ -46,7 +46,7 @@ api.interceptors.response.use(
         if (isAuthenticated() &&
             error.response.status === HTTP_STATUS.UNAUTHORIZED &&
             !originalConfig._retry) {
-          return tryToRefreshToken(originalConfig);
+          return tryRefreshToken(originalConfig);
         }
         if (isAuthenticated() &&
             error.response.status === HTTP_STATUS.FORBIDDEN &&
@@ -58,7 +58,7 @@ api.interceptors.response.use(
     }
 );
 
-const tryToRefreshToken = async (originalConfig) => {
+const tryRefreshToken = async (originalConfig) => {
   try {
     await refreshToken();
     originalConfig._retry = true;

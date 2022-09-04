@@ -102,6 +102,10 @@ export const CONTENT = {
       COMMENTS: "profile.statistics.comments",
     },
   },
+  ABOUT: {
+    TITLE: "about.title",
+    TEXT: "about.text",
+  },
   DIALOG: {
     UNBLOCK: {
       TITLE: "dialog.unblock.title",

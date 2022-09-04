@@ -6,8 +6,8 @@ import {CONTENT, ROUTE_URL}        from "../../Constants";
 import "./Styles/Whoops404.scss";
 
 export const Whoops404 = () => {
-  const navigate = useNavigate();
   const {t} = useTranslation();
+  const navigate = useNavigate();
   const handleHome = () => navigate(ROUTE_URL.HOME);
   return (
       <Alert

@@ -12,8 +12,7 @@ import "./Styles/Profile.scss";
 export const Profile = observer(() => {
   const {t} = useTranslation();
   const [isRandomColorEnabled, setRandomColorEnabled] = useState(true);
-  const {authenticationStore, collectionStore} =
-      useStores("authenticationStore", "collectionStore");
+  const {authenticationStore, collectionStore} = useStores();
   const currentUser = authenticationStore.getCurrentUser();
   const statistics = collectionStore.getStatistics();
   const handleColorButtonClick = () => {
@@ -36,7 +35,7 @@ export const Profile = observer(() => {
           </Grid>
           <Grid item xs={12} textAlign="end">
             <IconButton size="medium" className="color-button"
-            onClick={handleColorButtonClick}>
+                        onClick={handleColorButtonClick}>
               <FormatPaintIcon className="color-icon" fontSize="large" />
             </IconButton>
           </Grid>

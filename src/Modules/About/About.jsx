@@ -1,16 +1,21 @@
 import {Container, Divider, Typography} from "@mui/material";
 import React                            from "react";
+import {useTranslation}                 from "react-i18next";
+import {CONTENT}                        from "../../Constants";
 import "./Styles/About.scss";
 
-export const About = () => (
-    <Container className="about-container">
-      <Typography color="primary" className="about-title" variant="h3">
-        ABOUT
-      </Typography>
-      <Divider variant="middle" color="text.primary" />
-      <Typography color="secondary" className="about-text" variant="h5">
-        <strong>ILearning Course Project</strong>
-      </Typography>
-      <Divider variant="middle" color="text.primary" />
-    </Container>
-);
+export const About = () => {
+  const {t} = useTranslation();
+  return (
+      <Container className="about-container">
+        <Typography color="primary" className="about-title" variant="h3">
+          {t(CONTENT.ABOUT.TITLE)}
+        </Typography>
+        <Divider variant="middle" color="text.primary" />
+        <Typography color="secondary" className="about-text" variant="h5">
+          <strong>{t(CONTENT.ABOUT.TEXT)}</strong>
+        </Typography>
+        <Divider variant="middle" color="text.primary" />
+      </Container>
+  );
+};
