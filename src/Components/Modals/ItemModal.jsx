@@ -233,13 +233,14 @@ export const ItemModal = observer((props) => {
                                 key={index} label={field.name}
                                 saveField={saveField}
                                 className="modal-input-field"
-                                onChange={(date) =>
-                                    setFieldValue(customField, {
-                                      name: field.name,
-                                      contentType: field.contentType,
-                                      value: date.toString(),
-                                    })
-                                }
+                                onChange={date => {
+                                  field.value = date;
+                                  setFieldValue(customField, {
+                                    name: field.name,
+                                    contentType: field.contentType,
+                                    value: date.toString(),
+                                  });
+                                }}
                                 value={
                                     field.value
                                     || (values[customField]

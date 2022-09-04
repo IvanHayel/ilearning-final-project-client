@@ -233,7 +233,7 @@ export const Item = observer(() => {
                         return (
                             <Typography key={index} className="accordion-plain">
                               <strong>{field.name}: </strong>
-                              {new Date(item.updateDate).toLocaleString()}
+                              {new Date(field.value).toLocaleString()}
                             </Typography>
                         );
                       case CONTENT_TYPE.BOOLEAN:
