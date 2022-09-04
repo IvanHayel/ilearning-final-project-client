@@ -80,6 +80,10 @@
       "comments": "Total comments:"
     }
   },
+  "about": {
+    "title": "ABOUT",
+    "text": "ILearning Course Project"
+  },
   "dialog": {
     "unblock": {
       "title": "Are you sure you want to unblock this user(s)?",
