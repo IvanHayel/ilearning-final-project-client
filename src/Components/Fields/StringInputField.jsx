@@ -12,6 +12,9 @@ export const StringInputField = (props) => {
           onChange={(event) => saveField(event)}
           onFocus={(event) => saveField(event)}
           defaultValue={defaultValue}
+          inputProps={{
+            maxLength: 255
+          }}
           InputProps={{
             startAdornment: (
                 <InputAdornment position="start">
