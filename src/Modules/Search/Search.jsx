@@ -61,6 +61,8 @@ export const Search = observer(() => {
   const collectionsStart = (collectionsPage - 1) * SEARCH_ELEMENTS_PER_PAGE;
   const collectionsEnd = collectionsPage * SEARCH_ELEMENTS_PER_PAGE;
   const handleChangeScope = (event) => {
+    setItemsPage(1);
+    setCollectionsPage(1);
     const parameters = createSearchParams({
       [ROUTE_PARAMETER.SEARCH.TERM]: searchTerm,
       [ROUTE_PARAMETER.SEARCH.SCOPE]: event.target.value,
