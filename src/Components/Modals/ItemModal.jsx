@@ -238,7 +238,7 @@ export const ItemModal = observer((props) => {
                                   setFieldValue(customField, {
                                     name: field.name,
                                     contentType: field.contentType,
-                                    value: date.toString(),
+                                    value: date,
                                   });
                                 }}
                                 value={
