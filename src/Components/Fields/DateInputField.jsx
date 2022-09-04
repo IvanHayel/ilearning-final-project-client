@@ -35,6 +35,7 @@ export const DateInputField = observer((props) => {
                 <TextField
                     type="datetime-local"
                     autoFocus
+                    InputProps={{readOnly: true}}
                     onFocus={(event) => saveField(event)}
                     {...params}
                 />

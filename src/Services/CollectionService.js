@@ -300,7 +300,6 @@ export const formItemRequest = async (values) => {
           value.value = new Date(value.value).toISOString();
         } catch (error) {
           value.value = new Date().toISOString();
-          console.log(new Date(value.value))
         }
       }
       request.fields = [...request.fields, value];
