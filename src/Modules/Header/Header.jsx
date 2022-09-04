@@ -99,12 +99,12 @@ export const Header = observer(() => {
   }, [i18n, themeStore]);
   useEffect(() => {
     const fetchTagsAndThemes = async () => {
+      setSearchOptionsLoading(true);
       await getTags();
       await getThemes();
+      setSearchOptionsLoading(false);
     };
-    setSearchOptionsLoading(true);
     fetchTagsAndThemes().catch((error) => console.error(error));
-    setSearchOptionsLoading(false);
   }, []);
   return (
       <AppBar color="primary" position="sticky" className="header-bar">

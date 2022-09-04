@@ -26,8 +26,7 @@ import "./Styles/Home.scss";
 export const Home = observer(() => {
   const {t} = useTranslation();
   const navigate = useNavigate();
-  const {authenticationStore, collectionStore} =
-      useStores("authenticationStore", "collectionStore");
+  const {authenticationStore, collectionStore} = useStores();
   const tagsForCloud = collectionStore.getTagsForCloud();
   const topCollections = collectionStore.getTopCollections();
   const isCurrentUserAuthenticated = authenticationStore.isAuthenticated();

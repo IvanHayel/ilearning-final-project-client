@@ -58,8 +58,7 @@ export const ItemModal = observer((props) => {
   const [isImageLoading, setImageLoading] = useState(false);
   const [isWaitingServer, setWaitingServer] = useState(false);
   const [additionalFields, setAdditionalFields] = useState([]);
-  const {collectionStore, themeStore} =
-      useStores("collectionStore", "themeStore");
+  const {collectionStore, themeStore} = useStores();
   const tags = collectionStore.getTags();
   const initialValues = {
     name: item ? item.name : "",

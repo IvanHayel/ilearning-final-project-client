@@ -1,8 +1,8 @@
 import {Container, Divider, Typography} from "@mui/material";
 import React                            from "react";
-import "./Styles/About.scss";
 import {useTranslation}                 from "react-i18next";
 import {CONTENT}                        from "../../Constants";
+import "./Styles/About.scss";
 
 export const About = () => {
   const {t} = useTranslation();

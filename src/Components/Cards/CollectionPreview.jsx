@@ -9,9 +9,6 @@ import {
   Grid,
   Typography
 }                            from "@mui/material";
-import {
-  observer
-}                            from "mobx-react-lite";
 import {useEffect, useState} from "react";
 import {
   useTranslation
@@ -34,7 +31,7 @@ import {DeleteDialog}        from "../Dialogs";
 import {CollectionModal}     from "../Modals";
 import "./Styles/CardPreview.scss";
 
-export const CollectionPreview = observer((props) => {
+export const CollectionPreview = (props) => {
   const {t} = useTranslation();
   const navigate = useNavigate();
   const {collection, onEdit, onDelete} = props;
@@ -115,4 +112,4 @@ export const CollectionPreview = observer((props) => {
         </Card>
       </Grid>
   );
-});
+};
