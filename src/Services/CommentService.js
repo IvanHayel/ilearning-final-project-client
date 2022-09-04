@@ -27,7 +27,8 @@ const {authenticationStore, commentStore} = stores;
 const subscriptions = new Map();
 
 let stompClient = null;
-const stompDebugEnabled = process.env.REACT_APP_API_SOCKET_DEBUG_ENABLED;
+const stompDebugEnabled =
+    process.env.REACT_APP_API_SOCKET_DEBUG_ENABLED === "true";
 
 let socketConnectedStatus = false;
 
