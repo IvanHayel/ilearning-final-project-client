@@ -89,3 +89,4 @@ typings/
 
 # Intellij IDEA
 *.iml
+.idea
